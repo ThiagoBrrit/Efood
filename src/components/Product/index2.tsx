@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import italiana from '../../assets/images/italiana.png'
 import Tag from '../Tag'
 
@@ -8,7 +9,9 @@ const Product2 = () => (
     <Card>
       <CardBackground style={{ backgroundImage: `url(${italiana})` }}>
         <Infos>
-          <Tag>Italiana</Tag>
+          <Tag size="small">
+            <Link to="/italiana">Italiana</Link>
+          </Tag>
         </Infos>
       </CardBackground>
       <Titulo>La Dolce Vita Trattoria</Titulo>

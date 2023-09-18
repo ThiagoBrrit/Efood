@@ -1,5 +1,6 @@
 import Product from '../Product'
 import Product2 from '../Product/index2'
+import Product3 from '../Product/index3'
 
 import { Container, List } from './styles'
 
