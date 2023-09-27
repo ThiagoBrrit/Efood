@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 import Tag from '../Tag'
+import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
   border-right: 1px solid ${cores.meiovermelho};
@@ -100,4 +101,31 @@ export const Infos = styled.div`
   position: absolute;
   top: 8px;
   right: 8px;
+`
+export const Links = styled(Link)`
+  text-decoration: none;
+  color: ${cores.meiobranco};
+`
+
+export const Classificacao = styled.p`
+  color: ${cores.meiovermelho};
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  bottom: 166px;
+  left: 409px;
+`
+export const Classificacao2 = styled.p`
+  color: ${cores.meiovermelho};
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  bottom: 163px;
+  left: 440px;
 `
