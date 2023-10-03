@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
-import Tag from '../Tag'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
@@ -34,6 +33,7 @@ export const CardBackground = styled.header`
   width: 472px;
   height: 217px;
   flex-shrink: 0;
+
   ${TagContainer} {
     margin-right: 8px;
     margin-top: 16px;
@@ -128,4 +128,66 @@ export const Classificacao2 = styled.p`
   position: absolute;
   bottom: 163px;
   left: 440px;
+`
+export const CardModal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 1;
+
+  width: 1024px;
+  height: 344px;
+  background-color: ${cores.meiovermelho};
+  color: ${cores.branco};
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  ${TagContainer} {
+    background-color: ${cores.meiobranco};
+    color: ${cores.meiovermelho};
+    margin: 8px;
+    text-align: center;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+`
+
+export const ModalContent = styled.div`
+  position: relative;
+  z-index: 1;
+
+  img {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-left: 32px;
+    margin-right: 24px;
+  }
+
+  h4 {
+    margin-top: 32px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+  }
+
+  p {
+    margin-top: 16px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  ${TagContainer} {
+    margin-top: 16px;
+    margin-left: 0px;
+  }
 `
