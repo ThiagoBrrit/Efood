@@ -10,6 +10,7 @@ import {
 import vector from '../../assets/images/Vector.png'
 import logo from '../../assets/images/logo.png'
 import italiana from '../../assets/images/italiana.png'
+import { Links } from '../Product/styles'
 
 const Header2 = () => (
   <>
@@ -18,7 +19,9 @@ const Header2 = () => (
         backgroundImage: `url(${vector})`
       }}
     >
-      <Restaurante>Restaurantes</Restaurante>
+      <Restaurante>
+        <Links to="/">Restaurantes</Links>
+      </Restaurante>
       <Image src={logo} alt="Efood" />
       <Carrinho href="#">0 - produto(s) no carrinho</Carrinho>
     </HeaderBar2>

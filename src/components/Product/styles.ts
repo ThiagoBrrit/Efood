@@ -32,8 +32,8 @@ export const Card2 = styled.div`
 export const CardBackground = styled.header`
   width: 472px;
   height: 217px;
-  flex-shrink: 0;
-
+  background-size: cover;
+  background-position: center;
   ${TagContainer} {
     margin-right: 8px;
     margin-top: 16px;
@@ -115,7 +115,7 @@ export const Classificacao = styled.p`
   font-weight: 700;
   line-height: normal;
   position: absolute;
-  bottom: 166px;
+  bottom: 190px;
   left: 409px;
 `
 export const Classificacao2 = styled.p`
@@ -126,7 +126,7 @@ export const Classificacao2 = styled.p`
   font-weight: 700;
   line-height: normal;
   position: absolute;
-  bottom: 163px;
+  bottom: 186px;
   left: 440px;
 `
 export const CardModal = styled.div`

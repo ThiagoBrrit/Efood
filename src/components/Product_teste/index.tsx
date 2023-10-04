@@ -12,52 +12,64 @@ import {
   ModalContent,
   Titulo
 } from './styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Pratos } from '../../pages/Home'
 
-const ProdutoPizza = () => {
+type Props = {
+  nome: string
+  foto: string
+  preco: number
+  descricao: string
+  porcao: string
+}
+
+const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
   const [openModal, setOpenModal] = useState(false)
+
+  const { id } = useParams()
+
+  const [pratos, setPratos] = useState<Pratos>()
+
+  useEffect(() => {
+    fetch(`https://fake-api-tau.vercel.app/api/efood/${id}`)
+      .then((res) => res.json())
+      .then((res) => setPratos(res))
+  }, [id])
+
+  if (!pratos) {
+    return <h3>Carregando...</h3>
+  }
 
   return (
     <>
       <Card>
         <CardBackground
-          style={{ backgroundImage: `url(${pizza})` }}
+          style={{ backgroundImage: `url(${foto})` }}
         ></CardBackground>
-        <Titulo>Pizza Marguerita teste</Titulo>
-        <Descricao>
-          A clássica Marguerita: molho de tomate suculento, mussarela derretida,
-          manjericão fresco e um toque de azeite. Sabor e simplicidade!
-        </Descricao>
+        <Titulo>{nome}</Titulo>
+        <Descricao>{descricao}</Descricao>
         <BotaoCard onClick={() => setOpenModal(true)}>Mais detalhes</BotaoCard>
       </Card>
 
       <Modal className={openModal ? 'visivel' : ''}>
         <CardModal className="Container">
           <ModalContent>
-            <img height={280} width={280} src={pizza} alt="" />
+            <img height={280} width={280} src={foto} alt="" />
           </ModalContent>
           <ModalContent>
             <Close>
               <img onClick={() => setOpenModal(false)} src={close} alt="" />
             </Close>
-            <h4>Pizza Marguerita</h4>
+            <h4>{nome}</h4>
             <p>
-              A pizza Margherita é uma pizza clássica da culinária italiana,
-              reconhecida por sua simplicidade e sabor inigualável. Ela é feita
-              com uma base de massa fina e crocante, coberta com molho de tomate
-              fresco, queijo mussarela de alta qualidade, manjericão fresco e
-              azeite de oliva extra-virgem. A combinação de sabores é perfeita,
-              com o molho de tomate suculento e ligeiramente ácido, o queijo
-              derretido e cremoso e as folhas de manjericão frescas, que
-              adicionam um toque de sabor herbáceo. É uma pizza simples, mas
-              deliciosa, que agrada a todos os paladares e é uma ótima opção
-              para qualquer ocasião.
-              <br /> <br /> Serve: de 2 a 3 pessoas
+              {descricao}
+              <br /> <br /> {porcao}
             </p>
-            <Tag>Adicionar ao carrinho - R$ 60,90</Tag>
+            <Tag>Adicionar ao carrinho - R$ {preco}</Tag>
           </ModalContent>
         </CardModal>
-        <div className="overlay"></div>
+        <div className="overlay" onClick={() => setOpenModal(false)}></div>
       </Modal>
     </>
   )

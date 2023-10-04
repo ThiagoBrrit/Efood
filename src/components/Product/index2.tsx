@@ -53,7 +53,9 @@ const Product2 = () => (
         Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo
         no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor
         inesquecível. Peça já! <br></br>
-        <Tag>Saiba mais</Tag>
+        <Tag>
+          <Links to="/italiana">Saiba mais</Links>
+        </Tag>
       </Descricao>
     </Card>
   </>

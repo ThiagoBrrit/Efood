@@ -8,20 +8,42 @@ import {
   CardBackground,
   Infos,
   Classificacao,
-  Classificacao2
+  Classificacao2,
+  Links
 } from './styles'
 
-const Product = () => (
+type Props = {
+  titulo: string
+  destaque: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  id: number
+}
+
+const Product = ({
+  titulo,
+  destaque,
+  tipo,
+  descricao,
+  capa,
+  avaliacao,
+  id
+}: Props) => (
   <>
     <Card>
-      <CardBackground style={{ backgroundImage: `url(${japonesa})` }}>
+      <CardBackground style={{ backgroundImage: `url(${capa})` }}>
         <Infos>
-          <Tag size="small">Destaque da semana</Tag>
-          <Tag size="small">Japonesa</Tag>
+          <Tag size="small">{destaque ? 'destaque da semana' : ''}</Tag>
+
+          <Tag size="small">
+            <Links to={`/product/${id}`}>{tipo}</Links>
+          </Tag>
         </Infos>
       </CardBackground>
-      <Titulo>Hioki Sushi</Titulo>
-      <Classificacao>4.9</Classificacao>
+      <Titulo>{titulo}</Titulo>
+      <Classificacao>{avaliacao}</Classificacao>
       <Classificacao2>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,11 +68,11 @@ const Product = () => (
         </svg>
       </Classificacao2>
       <Descricao>
-        Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
-        frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
-        rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão
-        sem sair do lar com nosso delivery! <br></br>
-        <Tag>Saiba mais</Tag>
+        {descricao}
+        <br></br>
+        <Tag>
+          <Links to={`/product/${id}`}>Saiba mais</Links>
+        </Tag>
       </Descricao>
     </Card>
   </>
