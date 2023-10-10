@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import italiana from '../../assets/images/italiana.png'
 import Tag from '../Tag'
 

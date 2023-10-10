@@ -1,6 +1,5 @@
 import Tag from '../Tag'
 
-import japonesa from '../../assets/images/japonesa.png'
 import {
   Card,
   Descricao,
