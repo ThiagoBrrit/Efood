@@ -14,7 +14,7 @@ export const ProductsList2 = ({ prato }: Props) => {
         <List2>
           {prato.map((pratos) => (
             <ProdutoPizza
-              key={pratos.id}
+              key={pratos.cardapio.id}
               nome={pratos.cardapio.nome}
               foto={pratos.cardapio.foto}
               preco={pratos.cardapio.preco}

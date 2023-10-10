@@ -9,7 +9,7 @@ const Italiana = () => {
   const [restaurantes, setRestaurantes] = useState<Pratos[]>([])
 
   useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes`)
       .then((res) => res.json())
       .then((res) => setRestaurantes(res))
   }, [])
