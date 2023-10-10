@@ -1,4 +1,3 @@
-import pizza from '../../assets/images/pizza.png'
 import Tag from '../Tag'
 import close from '../../assets/images/close.png'
 import {
@@ -32,7 +31,7 @@ const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
   const [pratos, setPratos] = useState<Pratos>()
 
   useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/${id}`)
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
       .then((res) => res.json())
       .then((res) => setPratos(res))
   }, [id])
