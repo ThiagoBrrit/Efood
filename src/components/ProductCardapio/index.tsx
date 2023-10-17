@@ -11,9 +11,7 @@ import {
   ModalContent,
   Titulo
 } from './styles'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Pratos } from '../../pages/Home'
+import { useState } from 'react'
 
 type Props = {
   nome: string
@@ -25,20 +23,6 @@ type Props = {
 
 const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
   const [openModal, setOpenModal] = useState(false)
-
-  const { id } = useParams()
-
-  const [pratos, setPratos] = useState<Pratos>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setPratos(res))
-  }, [id])
-
-  if (!pratos) {
-    return <h3>Carregando...</h3>
-  }
 
   return (
     <>

@@ -7,7 +7,7 @@ import { Pratos } from '../Home'
 import { useParams } from 'react-router-dom'
 
 const Italiana = () => {
-  const [restaurantes, setRestaurantes] = useState<Pratos[]>([])
+  const [restaurantes, setRestaurantes] = useState<Pratos>()
 
   const { id } = useParams()
 
@@ -16,12 +16,13 @@ const Italiana = () => {
       .then((res) => res.json())
       .then((res) => setRestaurantes(res))
   }, [id])
+
   return (
     <>
       <Container>
         <Header2 />
       </Container>
-      <ProductsList2 prato={restaurantes} titulo={''} />
+      <ProductsList2 cardapios={restaurantes} />
       <Container>
         <Footer></Footer>
       </Container>

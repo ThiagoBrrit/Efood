@@ -21,6 +21,8 @@ export const CardBackground = styled.div`
   margin: 8px;
   width: 304px;
   height: 167px;
+  background-size: cover;
+  background-position: center;
 `
 
 export const Titulo = styled.h3`

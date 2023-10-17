@@ -1,17 +1,8 @@
 import { useEffect, useState } from 'react'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
-import { ProductsList } from '../../components/ProductsList'
+import { ProductsList, Produtos } from '../../components/ProductsList'
 import { Container } from '../../styles'
-
-export interface Produtos {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
 
 export type Pratos = {
   id: number
@@ -38,7 +29,7 @@ const Home = () => {
       <Container>
         <Header />
       </Container>
-      <ProductsList titulo={''} prato={restaurantes} />
+      <ProductsList prato={restaurantes} />
       <Container>
         <Footer></Footer>
       </Container>
