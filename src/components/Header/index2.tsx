@@ -9,7 +9,6 @@ import {
 
 import vector from '../../assets/images/Vector.png'
 import logo from '../../assets/images/logo.png'
-import italiana from '../../assets/images/italiana.png'
 import { Links } from '../Product/styles'
 import { Pratos } from '../../pages/Home'
 

@@ -1,5 +1,4 @@
 import { Pratos } from '../../pages/Home'
-import { HeaderBar3 } from '../Header/styles'
 import Product from '../Product'
 import ProdutoPizza from '../ProductCardapio'
 
