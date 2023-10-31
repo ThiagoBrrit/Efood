@@ -29,11 +29,14 @@ const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
   return (
     <>
       <Card>
-        <CardBackground
-          style={{ backgroundImage: `url(${foto})` }}
-        ></CardBackground>
-        <Titulo>{nome}</Titulo>
-        <Descricao>{descricao}</Descricao>
+        <div>
+          <CardBackground
+            style={{ backgroundImage: `url(${foto})` }}
+          ></CardBackground>
+          <Titulo>{nome}</Titulo>
+          <Descricao>{descricao}</Descricao>
+        </div>
+
         <BotaoCard onClick={() => setOpenModal(true)}>Mais detalhes</BotaoCard>
       </Card>
 

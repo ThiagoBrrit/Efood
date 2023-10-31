@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-
 import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
   background: ${cores.meiovermelho};
   width: 320px;
+  height: 450px;
   flex-shrink: 0;
   margin-bottom: 48px;
+  position: relative;
 
   ${TagContainer} {
     background-color: ${cores.meiobranco};
@@ -147,6 +148,10 @@ export const BotaoCard = styled.button`
   width: 95%;
   text-align: center;
   padding: 4px 6px;
+  position: absolute;
+  bottom: 0px;
+  left: 47.5%;
+  transform: translateX(-50%);
 
   cursor: pointer;
 `
