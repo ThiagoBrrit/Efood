@@ -1,3 +1,9 @@
+import vector from '../../assets/images/Vector.png'
+import logo from '../../assets/images/logo.png'
+
+import { Links } from '../Product/styles'
+import { Pratos } from '../../pages/Home'
+
 import {
   Carrinho,
   HeaderBar2,
@@ -6,11 +12,6 @@ import {
   HeaderBar3,
   BackHeader
 } from './styles'
-
-import vector from '../../assets/images/Vector.png'
-import logo from '../../assets/images/logo.png'
-import { Links } from '../Product/styles'
-import { Pratos } from '../../pages/Home'
 
 export type Props = {
   capaetitulo?: Pratos[]

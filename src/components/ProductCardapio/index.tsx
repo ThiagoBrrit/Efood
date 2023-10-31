@@ -1,5 +1,8 @@
+import { useState } from 'react'
+
 import Tag from '../Tag'
 import close from '../../assets/images/close.png'
+
 import {
   BotaoCard,
   Card,
@@ -11,7 +14,6 @@ import {
   ModalContent,
   Titulo
 } from './styles'
-import { useState } from 'react'
 
 type Props = {
   nome: string

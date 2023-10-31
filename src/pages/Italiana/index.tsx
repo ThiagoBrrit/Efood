@@ -1,10 +1,11 @@
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
 import Footer from '../../components/Footer'
 import Header2 from '../../components/Header/index2'
 import { ProductsList2 } from '../../components/ProductsList/index'
 import { Container } from '../../styles'
-import { useEffect, useState } from 'react'
 import { Pratos } from '../Home'
-import { useParams } from 'react-router-dom'
 
 const Italiana = () => {
   const [restaurantes, setRestaurantes] = useState<Pratos>()

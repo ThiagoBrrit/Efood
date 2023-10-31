@@ -1,8 +1,7 @@
 import { Pratos } from '../../pages/Home'
+import { Container, List, List2 } from './styles'
 import Product from '../Product'
 import ProdutoPizza from '../ProductCardapio'
-
-import { Container, List, List2 } from './styles'
 
 export interface Produtos {
   foto: string
