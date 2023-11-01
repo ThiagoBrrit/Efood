@@ -32,7 +32,23 @@ const Header2 = ({ capaetitulo }: Props) => {
         <Carrinho href="#">0 - produto(s) no carrinho</Carrinho>
       </HeaderBar2>
       <BackHeader>
-        {capaetitulo?.map((pratos) => (
+        {capaetitulo && capaetitulo.length > 0 ? (
+          capaetitulo.map((pratos) => (
+            <HeaderBar3
+              key={pratos.id}
+              style={{
+                backgroundImage: `url(${pratos.capa})`
+              }}
+            >
+              <p>{pratos.tipo}</p>
+              <h2>{pratos.titulo}</h2>
+            </HeaderBar3>
+          ))
+        ) : (
+          // Trate o caso em que capaetitulo é vazio ou indefinido
+          <p>Nenhum item de cabeçalho disponível.</p>
+        )}
+        {/* {capaetitulo?.map((pratos) => (
           <HeaderBar3
             key={pratos.id}
             style={{
@@ -42,7 +58,7 @@ const Header2 = ({ capaetitulo }: Props) => {
             <p>{pratos.tipo}</p>
             <h2>{pratos.titulo}</h2>
           </HeaderBar3>
-        ))}
+        ))} */}
       </BackHeader>
     </>
   )

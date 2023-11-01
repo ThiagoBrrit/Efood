@@ -8,22 +8,31 @@ import { Container } from '../../styles'
 import { Pratos } from '../Home'
 
 const Italiana = () => {
-  const [restaurantes, setRestaurantes] = useState<Pratos>()
+  const [restaurantes, setRestaurantes] = useState<Pratos[]>([])
+  const [restaurantess, setRestaurantess] = useState<Pratos>()
 
   const { id } = useParams()
 
   useEffect(() => {
     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
       .then((res) => res.json())
-      .then((res) => setRestaurantes(res))
+      .then((res) => {
+        console.log('Dados da API:', res)
+        setRestaurantes([res])
+        setRestaurantess(res)
+      })
   }, [id])
 
   return (
     <>
       <Container>
-        <Header2 />
+        {restaurantes ? (
+          <Header2 capaetitulo={restaurantes} />
+        ) : (
+          <p>Carregando...</p>
+        )}
       </Container>
-      <ProductsList2 cardapios={restaurantes} />
+      <ProductsList2 cardapios={restaurantess} />
       <Container>
         <Footer></Footer>
       </Container>
