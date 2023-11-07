@@ -36,8 +36,8 @@ export const CardBackground = styled.header`
   background-size: cover;
   background-position: center;
   ${TagContainer} {
-    margin-right: 8px;
-    margin-top: 16px;
+    margin-right: 4px;
+    margin-top: 8px;
   }
 `
 
@@ -82,6 +82,8 @@ export const Descricao = styled.p`
   margin-left: 8px;
   ${TagContainer} {
     margin-top: 16px;
+    position: absolute;
+    top: 382px;
   }
 `
 export const Descricao2 = styled.p`
@@ -106,6 +108,7 @@ export const Infos = styled.div`
 export const Links = styled(Link)`
   text-decoration: none;
   color: ${cores.meiobranco};
+  font-size: 12px;
 `
 
 export const Classificacao = styled.p`

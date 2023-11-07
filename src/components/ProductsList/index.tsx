@@ -1,5 +1,5 @@
 import { Pratos } from '../../pages/Home'
-import { Container, List, List2 } from './styles'
+import { Container, Container2, List, List2 } from './styles'
 import Product from '../Product'
 import ProdutoPizza from '../ProductCardapio'
 
@@ -46,7 +46,7 @@ export const ProductsList2 = ({ cardapios }: Props) => {
   const { cardapio } = { ...cardapios }
 
   return (
-    <Container>
+    <Container2>
       <div className="Container">
         <List2>
           {cardapio?.map((pratos) => (
@@ -61,6 +61,6 @@ export const ProductsList2 = ({ cardapios }: Props) => {
           ))}
         </List2>
       </div>
-    </Container>
+    </Container2>
   )
 }

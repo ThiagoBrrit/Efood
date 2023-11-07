@@ -26,6 +26,11 @@ type Props = {
 const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
   const [openModal, setOpenModal] = useState(false)
 
+  const precoFormatado = preco.toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })
+
   return (
     <>
       <Card>
@@ -54,7 +59,7 @@ const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
               {descricao}
               <br /> <br /> {porcao}
             </p>
-            <Tag>Adicionar ao carrinho - R$ {preco}</Tag>
+            <Tag>Adicionar ao carrinho - R$ {precoFormatado}</Tag>
           </ModalContent>
         </CardModal>
         <div className="overlay" onClick={() => setOpenModal(false)}></div>

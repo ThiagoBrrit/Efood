@@ -69,6 +69,8 @@ const Product = ({
       <Descricao>
         {descricao}
         <br></br>
+        <br></br>
+        <br></br>
         <Tag>
           <Links to={`/product/${id}`}>Saiba mais</Links>
         </Tag>
