@@ -108,7 +108,6 @@ export const Infos = styled.div`
 export const Links = styled(Link)`
   text-decoration: none;
   color: ${cores.meiobranco};
-  font-size: 12px;
 `
 
 export const Classificacao = styled.p`
