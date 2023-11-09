@@ -126,6 +126,7 @@ export const ModalContent = styled.div`
   ${TagContainer} {
     margin-top: 16px;
     margin-left: 0px;
+    padding: 4px 6px;
   }
 `
 
