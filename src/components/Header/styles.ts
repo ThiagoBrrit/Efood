@@ -34,6 +34,7 @@ export const HeaderList = styled.ul`
 `
 
 export const Carrinho = styled.a`
+  cursor: pointer;
   position: absolute;
   top: 60px;
   left: 939px;

@@ -122,12 +122,6 @@ export const ModalContent = styled.div`
     font-weight: 400;
     line-height: 22px;
   }
-
-  ${TagContainer} {
-    margin-top: 16px;
-    margin-left: 0px;
-    padding: 4px 6px;
-  }
 `
 
 export const Close = styled.header`
@@ -155,4 +149,20 @@ export const BotaoCard = styled.button`
   transform: translateX(-50%);
 
   cursor: pointer;
+`
+
+export const ButtonCart = styled.button`
+  background-color: ${cores.meiovermelho};
+  color: ${cores.meiobranco};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 6px;
+  display: inline-block;
+  margin-top: 16px;
+  margin-left: 0px;
+  background-color: ${cores.meiobranco};
+  color: ${cores.meiovermelho};
+  text-align: center;
+  cursor: pointer;
+  border: none;
 `

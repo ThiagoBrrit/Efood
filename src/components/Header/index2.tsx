@@ -13,11 +13,22 @@ import {
   BackHeader
 } from './styles'
 
+import { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+
 export type Props = {
   capaetitulo?: Pratos[]
 }
 
 const Header2 = ({ capaetitulo }: Props) => {
+  const dispatch = useDispatch()
+  const { items } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <>
       <HeaderBar2
@@ -29,7 +40,9 @@ const Header2 = ({ capaetitulo }: Props) => {
           <Links to="/">Restaurantes</Links>
         </Restaurante>
         <Image src={logo} alt="Efood" />
-        <Carrinho href="#">0 - produto(s) no carrinho</Carrinho>
+        <Carrinho onClick={openCart}>
+          {items?.length} - produto(s) no carrinho
+        </Carrinho>
       </HeaderBar2>
       <BackHeader>
         {capaetitulo && capaetitulo.length > 0 ? (
@@ -45,20 +58,8 @@ const Header2 = ({ capaetitulo }: Props) => {
             </HeaderBar3>
           ))
         ) : (
-          // Trate o caso em que capaetitulo é vazio ou indefinido
           <p>Nenhum item de cabeçalho disponível.</p>
         )}
-        {/* {capaetitulo?.map((pratos) => (
-          <HeaderBar3
-            key={pratos.id}
-            style={{
-              backgroundImage: `url(${pratos.capa})`
-            }}
-          >
-            <p>{pratos.tipo}</p>
-            <h2>{pratos.titulo}</h2>
-          </HeaderBar3>
-        ))} */}
       </BackHeader>
     </>
   )

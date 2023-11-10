@@ -57,6 +57,16 @@ export const ProductsList2 = ({ cardapios }: Props) => {
               preco={pratos.preco}
               descricao={pratos.descricao}
               porcao={pratos.porcao}
+              cardapio={{
+                id: 0,
+                titulo: '',
+                destacado: false,
+                tipo: '',
+                avaliacao: 0,
+                descricao: '',
+                capa: '',
+                cardapio: []
+              }}
             />
           ))}
         </List2>

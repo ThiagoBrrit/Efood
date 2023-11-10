@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-import Tag from '../Tag'
 import close from '../../assets/images/close.png'
 
 import {
   BotaoCard,
+  ButtonCart,
   Card,
   CardBackground,
   CardModal,
@@ -15,15 +15,34 @@ import {
   Titulo
 } from './styles'
 
+import { add, open } from '../../store/reducers/cart'
+import { useDispatch } from 'react-redux'
+import { Pratos } from '../../pages/Home'
+import { Produtos } from '../ProductsList'
+
 type Props = {
   nome: string
   foto: string
   preco: number
   descricao: string
   porcao: string
+  cardapio: Pratos
 }
 
-const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
+const ProdutoPizza = ({
+  preco,
+  descricao,
+  foto,
+  nome,
+  porcao,
+  cardapio
+}: Props) => {
+  const dispatch = useDispatch()
+  const addToCart = () => {
+    dispatch(add(cardapio))
+    dispatch(open())
+  }
+
   const [openModal, setOpenModal] = useState(false)
 
   const precoFormatado = preco.toLocaleString('pt-BR', {
@@ -59,7 +78,9 @@ const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
               {descricao}
               <br /> <br /> {porcao}
             </p>
-            <Tag>Adicionar ao carrinho - R$ {precoFormatado}</Tag>
+            <ButtonCart onClick={addToCart}>
+              Adicionar ao carrinho - R$ {precoFormatado}
+            </ButtonCart>
           </ModalContent>
         </CardModal>
         <div className="overlay" onClick={() => setOpenModal(false)}></div>
