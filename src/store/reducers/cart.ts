@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Pratos } from '../../pages/Home'
-import { Produtos } from '../../components/ProductsList'
+
+import { ProdutoParaAdicionarAoCarrinho } from '../../components/ProductCardapio'
 
 type CartState = {
-  items: Pratos[]
+  items: ProdutoParaAdicionarAoCarrinho[]
   isOpen: boolean
 }
 
@@ -16,7 +16,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<Pratos>) => {
+    add: (state, action: PayloadAction<ProdutoParaAdicionarAoCarrinho>) => {
       state.items.push(action.payload)
     },
     open: (state) => {

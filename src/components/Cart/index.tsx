@@ -1,7 +1,7 @@
-import { RootReducer } from '../../store'
 import { useDispatch, useSelector } from 'react-redux'
-import { close } from '../../store/reducers/cart'
 
+import { RootReducer } from '../../store'
+import { close } from '../../store/reducers/cart'
 import Button from '../Button'
 import lixeira from '../../assets/images/lixeira-de-reciclagem.png'
 
@@ -30,18 +30,21 @@ const Cart = () => {
         <ul>
           {items.map((item) => (
             <div key={item.id}>
-              {item.cardapio.map((produto) => (
-                <CartItem key={produto.id}>
-                  <img src={produto.foto} />
-                  <div>
-                    <h3>{produto.nome}</h3>
-                    <span>{produto.preco}</span>
-                    <button type="button">
-                      <img src={lixeira} />
-                    </button>
-                  </div>
-                </CartItem>
-              ))}
+              <CartItem>
+                <img src={item.foto} />
+                <div>
+                  <h3>{item.nome}</h3>
+                  <span>
+                    {item.preco.toLocaleString('pt-BR', {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2
+                    })}
+                  </span>
+                  <button type="button">
+                    <img src={lixeira} />
+                  </button>
+                </div>
+              </CartItem>
             </div>
           ))}
         </ul>

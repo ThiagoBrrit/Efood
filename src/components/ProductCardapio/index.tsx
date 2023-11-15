@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import close from '../../assets/images/close.png'
+import { add, open } from '../../store/reducers/cart'
 
 import {
   BotaoCard,
@@ -15,31 +17,31 @@ import {
   Titulo
 } from './styles'
 
-import { add, open } from '../../store/reducers/cart'
-import { useDispatch } from 'react-redux'
-import { Pratos } from '../../pages/Home'
-import { Produtos } from '../ProductsList'
-
 type Props = {
   nome: string
   foto: string
   preco: number
   descricao: string
   porcao: string
-  cardapio: Pratos
 }
 
-const ProdutoPizza = ({
-  preco,
-  descricao,
-  foto,
-  nome,
-  porcao,
-  cardapio
-}: Props) => {
+export type ProdutoParaAdicionarAoCarrinho = {
+  nome: string
+  preco: number
+  id: number
+  foto: string
+}
+
+const ProdutoPizza = ({ preco, descricao, foto, nome, porcao }: Props) => {
   const dispatch = useDispatch()
   const addToCart = () => {
-    dispatch(add(cardapio))
+    const produtoParaAdicionar: ProdutoParaAdicionarAoCarrinho = {
+      nome,
+      preco,
+      foto,
+      id: 0
+    }
+    dispatch(add(produtoParaAdicionar))
     dispatch(open())
   }
 
