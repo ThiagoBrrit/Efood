@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const HeaderBar = styled.header`
   height: 384px;
@@ -24,6 +24,10 @@ export const HeaderBar2 = styled.header`
     text-decoration: none;
     font-weight: bold;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 768px;
+  }
 `
 
 export const HeaderList = styled.ul`
@@ -38,6 +42,9 @@ export const Carrinho = styled.a`
   position: absolute;
   top: 60px;
   left: 939px;
+  @media (max-width: ${breakpoints.tablet}) {
+    left: 540px;
+  }
 `
 export const Restaurante = styled.p`
   position: absolute;
@@ -46,11 +53,18 @@ export const Restaurante = styled.p`
   font-size: 18px;
   font-style: normal;
   font-weight: bold;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    left: 50px;
+  }
 `
 export const Image = styled.img`
   position: absolute;
   top: 40px;
   left: 621px;
+  @media (max-width: ${breakpoints.tablet}) {
+    left: 330px;
+  }
 `
 export const HeaderBar3 = styled.header`
   width: 1366px;
@@ -79,6 +93,9 @@ export const HeaderBar3 = styled.header`
     color: ${cores.branco};
     font-size: 32px;
     font-weight: bold;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 768px;
   }
 `
 

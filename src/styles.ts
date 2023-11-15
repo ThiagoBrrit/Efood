@@ -8,6 +8,11 @@ export const cores = {
   preto: '#4B4B4B'
 }
 
+export const breakpoints = {
+  desktop: '1366px',
+  tablet: '768px'
+}
+
 export const GlobalCss = createGlobalStyle`
   *{
     margin: 0;
@@ -26,4 +31,8 @@ export const Container = styled.div`
   max-width: 1366px;
   width: 100%;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 100%;
+  }
 `

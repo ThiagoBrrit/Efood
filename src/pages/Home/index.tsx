@@ -26,9 +26,7 @@ const Home = () => {
           <Header />
         </Container>
         <ProductsList prato={restaurantes} />
-        <Container>
-          <Footer></Footer>
-        </Container>
+        <Footer></Footer>
       </>
     )
   }

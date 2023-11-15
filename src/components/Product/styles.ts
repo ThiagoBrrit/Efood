@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 import { Link } from 'react-router-dom'
 
@@ -13,6 +13,11 @@ export const Card = styled.div`
   flex-shrink: 0;
   margin-bottom: 48px;
   position: relative;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 290px;
+    height: 520px;
+  }
 `
 export const Card2 = styled.div`
   background: ${cores.meiovermelho};
@@ -38,6 +43,9 @@ export const CardBackground = styled.header`
   ${TagContainer} {
     margin-right: 4px;
     margin-top: 8px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 290px;
   }
 `
 
@@ -84,6 +92,11 @@ export const Descricao = styled.p`
     margin-top: 16px;
     position: absolute;
     top: 382px;
+    @media (max-width: ${breakpoints.tablet}) {
+      position: absolute;
+      top: 472px;
+      margin-top: 16px;
+    }
   }
 `
 export const Descricao2 = styled.p`
@@ -120,6 +133,11 @@ export const Classificacao = styled.p`
   position: absolute;
   bottom: 190px;
   left: 409px;
+  @media (max-width: ${breakpoints.tablet}) {
+    position: absolute;
+    bottom: 270px;
+    left: 235px;
+  }
 `
 export const Classificacao2 = styled.p`
   color: ${cores.meiovermelho};
@@ -131,6 +149,12 @@ export const Classificacao2 = styled.p`
   position: absolute;
   bottom: 186px;
   left: 440px;
+  @media (max-width: ${breakpoints.tablet}) {
+    position: absolute;
+    bottom: 266px;
+    left: 265px;
+    max-width: 80%;
+  }
 `
 export const CardModal = styled.div`
   position: fixed;

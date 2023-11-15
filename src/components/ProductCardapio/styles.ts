@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
@@ -91,12 +91,19 @@ export const Modal = styled.div`
 export const CardModal = styled.div`
   background-color: ${cores.meiovermelho};
   color: ${cores.branco};
-  width: 1024px;
-  position: relative;
+  width: 80%;
+  max-width: 1024px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
-
   display: grid;
   grid-template-columns: 1fr 2fr;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 768px;
+  }
 `
 
 export const ModalContent = styled.div`
@@ -121,6 +128,13 @@ export const ModalContent = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 22px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    p {
+      margin-top: 16px;
+      margin-left: 4px;
+      font-size: 12px;
+    }
   }
 `
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
 export const CartContainer = styled.div`
@@ -37,6 +37,9 @@ export const Sidebar = styled.aside`
     max-width: 100%;
     width: 344px;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 240px;
 `
 export const Prices = styled.p`
   color: ${cores.meiobranco};
@@ -74,6 +77,9 @@ export const CartItem = styled.li`
     font-style: normal;
     font-weight: bold;
     margin-bottom: 16px;
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 16px;
+    }
   }
 
   span {
@@ -90,9 +96,17 @@ export const CartItem = styled.li`
     top: 76px;
     left: 320px;
 
+    @media (max-width: ${breakpoints.tablet}) {
+      left: 200px;
+    }
+
     img {
       width: 16px;
       height: 16px;
+      @media (max-width: ${breakpoints.tablet}) {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 `

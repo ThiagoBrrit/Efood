@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const FooterBar = styled.footer`
   display: block;
@@ -29,4 +30,19 @@ export const Descricao = styled.p`
 export const Logo = styled.img`
   text-align: center;
   margin: 40px 621px 32.5px 620px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    text-align: center;
+    margin: 40px 315px 32.5px;
+  }
+`
+
+export const Containers = styled.div`
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 100%;
+  }
 `
