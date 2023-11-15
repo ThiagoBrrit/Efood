@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 
 import { RootReducer } from '../../store'
-import { close } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/cart'
 import Button from '../Button'
 import lixeira from '../../assets/images/lixeira-de-reciclagem.png'
 
@@ -23,6 +23,16 @@ const Cart = () => {
     dispatch(close())
   }
 
+  const getTotalPrice = () => {
+    return items.reduce((acumulador, valorAtual) => {
+      return (acumulador += valorAtual.preco)
+    }, 0)
+  }
+
+  const removeItem = (nome: string) => {
+    dispatch(remove(nome))
+  }
+
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart}></Overlay>
@@ -40,7 +50,7 @@ const Cart = () => {
                       maximumFractionDigits: 2
                     })}
                   </span>
-                  <button type="button">
+                  <button onClick={() => removeItem(item.nome)} type="button">
                     <img src={lixeira} />
                   </button>
                 </div>
@@ -50,7 +60,12 @@ const Cart = () => {
         </ul>
         <Space>
           <Prices>Valor total</Prices>
-          <Prices>R$ 200,00</Prices>
+          <Prices>
+            {getTotalPrice().toLocaleString('pt-BR', {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            })}
+          </Prices>
         </Space>
         <Button
           type={'button'}
