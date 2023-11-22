@@ -1,9 +1,12 @@
-import vector from '../../assets/images/Vector.png'
-import logo from '../../assets/images/logo.png'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Links } from '../Product/styles'
 import { Pratos } from '../../pages/Home'
+import { open } from '../../store/reducers/cart'
+import { RootReducer } from '../../store'
 
+import vector from '../../assets/images/Vector.png'
+import logo from '../../assets/images/logo.png'
 import {
   Carrinho,
   HeaderBar2,
@@ -12,10 +15,6 @@ import {
   HeaderBar3,
   BackHeader
 } from './styles'
-
-import { open } from '../../store/reducers/cart'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
 
 export type Props = {
   capaetitulo?: Pratos[]

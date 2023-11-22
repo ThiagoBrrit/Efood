@@ -1,7 +1,9 @@
 import { Pratos } from '../../pages/Home'
 import { Container, Container2, List, List2 } from './styles'
+
 import Product from '../Product'
 import ProdutoPizza from '../ProductCardapio'
+import Loader from '../Loader'
 
 export interface Produtos {
   foto: string
@@ -16,26 +18,32 @@ export type Props = {
   titulo?: string
   prato?: Pratos[]
   cardapios?: Pratos
+  isLoading: boolean
 }
 
-export const ProductsList = ({ prato, titulo }: Props) => {
+export const ProductsList = ({ prato, titulo, isLoading }: Props) => {
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <Container>
       <div className="Container">
         <h2>{titulo}</h2>
         <List>
-          {prato?.map((pratos) => (
-            <Product
-              key={pratos.id}
-              titulo={pratos.titulo}
-              destaque={pratos.destacado}
-              tipo={pratos.tipo}
-              avaliacao={pratos.avaliacao}
-              descricao={pratos.descricao}
-              capa={pratos.capa}
-              id={pratos.id}
-            />
-          ))}
+          {prato &&
+            prato.map((pratos) => (
+              <Product
+                key={pratos.id}
+                titulo={pratos.titulo}
+                destaque={pratos.destacado}
+                tipo={pratos.tipo}
+                avaliacao={pratos.avaliacao}
+                descricao={pratos.descricao}
+                capa={pratos.capa}
+                id={pratos.id}
+              />
+            ))}
         </List>
       </div>
     </Container>

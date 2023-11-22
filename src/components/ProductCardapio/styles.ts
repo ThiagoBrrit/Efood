@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 

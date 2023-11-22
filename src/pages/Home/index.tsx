@@ -1,9 +1,9 @@
-import Footer from '../../components/Footer'
-import Header from '../../components/Header'
 import { ProductsList, Produtos } from '../../components/ProductsList'
 import { Container } from '../../styles'
-
 import { useGetFeaturedPratosQuery } from '../../services/api'
+
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 
 export type Pratos = {
   id: number
@@ -17,19 +17,17 @@ export type Pratos = {
 }
 
 const Home = () => {
-  const { data: restaurantes } = useGetFeaturedPratosQuery()
+  const { data: restaurantes, isLoading: isLoadingHome } =
+    useGetFeaturedPratosQuery()
 
-  if (restaurantes) {
-    return (
-      <>
-        <Container>
-          <Header />
-        </Container>
-        <ProductsList prato={restaurantes} />
-        <Footer></Footer>
-      </>
-    )
-  }
-  return <h4>carregando</h4>
+  return (
+    <>
+      <Container>
+        <Header />
+      </Container>
+      <ProductsList prato={restaurantes} isLoading={isLoadingHome} />
+      <Footer></Footer>
+    </>
+  )
 }
 export default Home

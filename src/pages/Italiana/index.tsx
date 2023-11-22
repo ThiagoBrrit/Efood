@@ -1,30 +1,28 @@
 import { useParams } from 'react-router-dom'
 
-import Footer from '../../components/Footer'
-import Header2 from '../../components/Header/index2'
 import { ProductsList2 } from '../../components/ProductsList/index'
 import { Container } from '../../styles'
-
 import { useGetCardapioQuery } from '../../services/api'
 
+import Footer from '../../components/Footer'
+import Header2 from '../../components/Header/index2'
+import Loader from '../../components/Loader'
+
+type ProductParams = {
+  id: string
+}
+
 const Italiana = () => {
-  const { id } = useParams()
-  const { data: cardapio, isLoading } = useGetCardapioQuery(id!)
-
-  if (isLoading) {
-    return <p>Carregando...</p>
-  }
-
-  if (!cardapio) {
-    return <p>Nenhum cardápio encontrado.</p>
-  }
+  const { id } = useParams() as ProductParams
+  const { data: cardapio, isLoading: isLoadingItaliana } =
+    useGetCardapioQuery(id)
 
   return (
     <>
       <Container>
-        {cardapio ? <Header2 capaetitulo={[cardapio]} /> : <p>Carregando...</p>}
+        {cardapio ? <Header2 capaetitulo={[cardapio]} /> : <Loader />}
       </Container>
-      <ProductsList2 cardapios={cardapio} />
+      <ProductsList2 cardapios={cardapio} isLoading={isLoadingItaliana} />
       <Container>
         <Footer></Footer>
       </Container>

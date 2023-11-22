@@ -1,8 +1,8 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
-import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
   border-right: 1px solid ${cores.meiovermelho};

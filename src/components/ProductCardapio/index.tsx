@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import close from '../../assets/images/close.png'
 import { add, open } from '../../store/reducers/cart'
 
+import close from '../../assets/images/close.png'
 import {
   BotaoCard,
   ButtonCart,

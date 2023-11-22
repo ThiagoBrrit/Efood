@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { breakpoints } from '../../styles'
 
 export const FooterBar = styled.footer`
@@ -28,8 +29,9 @@ export const Descricao = styled.p`
   padding-bottom: 40px;
 `
 export const Logo = styled.img`
-  text-align: center;
-  margin: 40px 621px 32.5px 620px;
+  display: block;
+  margin: 0 auto 32.5px;
+  padding-top: 40px;
 
   @media (max-width: ${breakpoints.tablet}) {
     text-align: center;

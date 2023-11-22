@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { breakpoints, cores } from '../../styles'
 import { ButtonContainer } from '../Button/styles'
 
@@ -11,6 +12,13 @@ export const CartContainer = styled.div`
   display: none;
   justify-content: flex-end;
   z-index: 1;
+
+  .text-in-cart {
+    color: ${cores.meiobranco};
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+  }
 
   &.is-open {
     display: flex;
@@ -36,6 +44,7 @@ export const Sidebar = styled.aside`
   ${ButtonContainer} {
     max-width: 100%;
     width: 344px;
+    cursor: pointer;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
