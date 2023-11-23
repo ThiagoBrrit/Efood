@@ -12,6 +12,7 @@ export const ButtonContainer = styled.button`
   font-weight: bold;
   text-aling: center;
   padding: 4px;
+  height: 24px;
 `
 
 export const ButtonLink = styled(Link)`

@@ -31,10 +31,17 @@ export const Success = styled.div`
   display: none;
   justify-content: flex-end;
   z-index: 1;
-  color: ${cores.meiobranco};
+  font-size: 14px;
+
+  p {
+    color: ${cores.meiobranco};
+    font-style: normal;
+    line-height: 22px;
+  }
 
   ${ButtonContainer} {
     margin-top: 24px;
+    height: 24px;
   }
 
   &.is-opensuccess {
@@ -65,6 +72,7 @@ export const TextColor = styled.div`
 
 export const Forms = styled.input`
   width: 100%;
+  height: 32px;
   margin: 8px 0 8px 0;
   background-color: ${cores.meiobranco};
   border: 1px solid ${cores.meiobranco};
@@ -113,6 +121,9 @@ export const Space2 = styled.div`
 export const TitleCheck = styled.p`
   color: ${cores.meiobranco};
   font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   margin-bottom: 16px;
   span {
     margin-right: 4px;
@@ -124,6 +135,7 @@ export const Division = styled.div`
 
   input {
     width: 100%;
+    height: 32px;
     margin: 8px 0 8px 0;
     background-color: ${cores.meiobranco};
     border: 1px solid ${cores.meiobranco};
@@ -146,6 +158,7 @@ export const Division2 = styled.div`
 
   input {
     width: 100%;
+    height: 32px;
     margin: 8px 0 8px 0;
     background-color: ${cores.meiobranco};
     border: 1px solid ${cores.meiobranco};
@@ -163,6 +176,12 @@ export const Division2 = styled.div`
 `
 export const Labels = styled.label`
   color: ${cores.meiobranco};
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 `
 
 export const Margining = styled.div`

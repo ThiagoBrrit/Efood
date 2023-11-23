@@ -70,7 +70,16 @@ const Checkout = () => {
         .max(3, 'O CVV precisa ter somente 3 digitos')
         .required('O campo é obrigatorio'),
       mdv: Yup.string().required('O campo é obrigatorio'),
-      adv: Yup.string().required('O campo é obrigatorio')
+      adv: Yup.string()
+        .required('O campo é obrigatório')
+        .test('is-valid-adv', 'Informe um número maior que 24', (value) => {
+          if (!value) {
+            // Se o valor não estiver preenchido, a validação passa
+            return true
+          }
+          const numericValue = parseInt(value, 10)
+          return !isNaN(numericValue) && numericValue > 23
+        })
     }),
     onSubmit: (values) => {
       purchase({
@@ -341,10 +350,21 @@ const Checkout = () => {
                         type="string"
                         name="mdv"
                         value={form.values.mdv}
-                        onChange={form.handleChange}
+                        onChange={(e) => {
+                          const userInput = e.target.value
+                          const month = userInput.slice(0, 2)
+                          if (
+                            !isNaN(Number(month)) &&
+                            Number(month) >= 1 &&
+                            Number(month) <= 12
+                          ) {
+                            form.handleChange(e)
+                          }
+                        }}
                         onBlur={form.handleBlur}
                         className={checkInputHasError('mdv') ? 'error' : ''}
                         mask="99"
+                        maskChar=""
                       />
                     </Division>
                     <Division2>
